@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Informe seu país com letras maiusculas e sem acentos: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="verificaPais()">
+    <div id="res">
+    </div>
+
+    <script>
+        function verificaPais(){
+            var txtnac = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+            var pais = txtnac.value
+            res.innerHTML = `<p>Seu país é <strong>${pais}</strong>.</p>`
+            if (pais != 'BRASIL'){
+                res.innerHTML += `<p>Você é <strong>ESTRANGEIRO</strong>.</p>`
+            }else{
+            res.innerHTML += `<p>Você é <strong>BRASILEIRO</strong>!</p>`
+            }
+        }
+    </script>
+</body>
+</html>

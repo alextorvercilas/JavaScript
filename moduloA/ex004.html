@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Meu primeiro Programa Javascript</title>
+</head>
+<body>
+    <h1>Olá Mundo!</h1>
+    <script>
+        var  n1 = Number(window.prompt('Digite um milhar com ponto:'))
+        alert(`O numero ordinal é  ${n1.toFixed(2).replace('.',',')}`)
+        alert(`O numero em moeda é  ${n1.toLocaleString("pt-BR", {style:"currency", currency:"BRL" }) }`)
+        
+    </script>
+</body>
+</html>
