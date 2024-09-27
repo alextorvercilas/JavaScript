@@ -1,33 +1,26 @@
-function contar(){
-    let ini = document.getElementById('txtini')
-    let fim = document.getElementById('txtfim')
-    let passo = document.getElementById('txtpasso')
-    let res = document.getElementById('res')
-
-    if(ini.value.length == 0 || passo.value.length == 0 || passo.value.length==0){
-          //alert('[ERRO} Faltam dados!')
-          res.innerHTML = 'Impossível contar!'
-    } else{
-        res.innerHTML = 'Contando:  <br>'
-        let i = Number(ini.value)
-        let f = Number(fim.value)
-        let p = Number(passo.value)
-        if (p<=0) {
-            alert('Passo inválido! Considerando PASSO 1')
-        }
-
-        if (i<f){
-            for (let c=i ; c <=f; c+=p){
-             res.innerHTML += `${c} \u{1F449}`
-            }
-            res.innerHTML +=`\u{1F3C1}`
-        } else {
-            for(let c= i; c>=f; c-=p){
-                res.innerHTML += `${c} \u{1F449}`
-            }
-             res.innerHTML +=`\u{1F3C1}`
-          }
+function carregar(){
+    var msg= window.document.getElementById('msg')
+    var img= window.document.getElementById('imagem')
+    var data = new Date()
+    var horas = data.getHours()
+    //var horas = 19
+    var minutos = data.getMinutes()
+    var horaatual = [horas, minutos].join(':')
+    
+    msg.innerHTML = `Agora são ${horaatual}`
+    if (horas >= 0 && horas <12){
+        //BOM DIA
+        img.src = 'Manha.png'
+        document.body.style.background='#faf290'
+    }else if(horas >= 12 && horas <=18){
+        //BOA TARDE 
+        img.src = 'tarde.png'
+        document.body.style.background='#e88d3c'
     }
-}
-
+    else{
+       //BOA NOITE
+       img.src = 'noite.png'
+       document.body.style.background='#31336c'
+    }
+    }
     
